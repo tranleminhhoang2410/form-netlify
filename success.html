@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Cảm ơn!</title>
+		<link rel="stylesheet" href="./assets/css/sucess.css" />
+	</head>
+	<body>
+		<main class="main">
+			<div class="card">
+				<header class="header">
+					<h1>Cảm ơn!</h1>
+				</header>
+				<main class="body">
+					<p>Thông tin của bạn đã được nhận.</p>
+					<p>
+						<a id="back-link" href="index.html">← Quay lại trang chủ</a>
+					</p>
+				</main>
+			</div>
+		</main>
+		<script>
+			(function () {
+				if (
+					document.referrer &&
+					document.location.host &&
+					document.referrer.match(new RegExp('^https?://' + document.location.host))
+				) {
+					document.getElementById('back-link').setAttribute('href', document.referrer);
+				}
+			})();
+		</script>
+	</body>
+</html>
